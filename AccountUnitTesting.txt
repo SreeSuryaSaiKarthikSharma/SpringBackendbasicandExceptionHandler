@@ -1,0 +1,88 @@
+Class: com.ust.controller.AccountController
+Constructors: 
+public com.ust.controller.AccountController(com.ust.service.AccountService)
+Fields: 
+private com.ust.service.AccountService com.ust.controller.AccountController.accountService
+Methods: 
+public org.springframework.http.ResponseEntity com.ust.controller.AccountController.handleAccountNotFoundException(com.ust.exception.AccountNotFoundException)
+public org.springframework.http.ResponseEntity com.ust.controller.AccountController.handleNoSuchAccountExistsException(com.ust.exception.NoSuchAccountExistsException)
+public org.springframework.http.ResponseEntity com.ust.controller.AccountController.handleAccountAlreadyExistsException(com.ust.exception.AccountAlreadyExistsException)
+public org.springframework.http.ResponseEntity com.ust.controller.AccountController.saveAccount(com.ust.model.Account) throws com.ust.exception.AccountAlreadyExistsException
+public org.springframework.http.ResponseEntity com.ust.controller.AccountController.updateAccount(com.ust.model.Account) throws com.ust.exception.NoSuchAccountExistsException
+public org.springframework.http.ResponseEntity com.ust.controller.AccountController.getAccountById(int) throws com.ust.exception.AccountNotFoundException
+public org.springframework.http.ResponseEntity com.ust.controller.AccountController.getAllAccounts() throws com.ust.exception.AccountNotFoundException
+________________________________________________________
+Class: com.ust.repository.AccountRepository
+Constructors: 
+Fields: 
+Methods: 
+________________________________________________________
+Class: com.ust.model.Account
+Constructors: 
+public com.ust.model.Account(int,java.lang.String,java.lang.String,int)
+public com.ust.model.Account()
+Fields: 
+private int com.ust.model.Account.accountId
+private java.lang.String com.ust.model.Account.aTitle
+private java.lang.String com.ust.model.Account.aCreator
+private int com.ust.model.Account.yearOfCreation
+Methods: 
+public java.lang.String com.ust.model.Account.toString()
+public int com.ust.model.Account.getAccountId()
+public void com.ust.model.Account.setAccountId(int)
+public java.lang.String com.ust.model.Account.getaTitle()
+public void com.ust.model.Account.setaTitle(java.lang.String)
+public java.lang.String com.ust.model.Account.getaCreator()
+public int com.ust.model.Account.getYearOfCreation()
+public void com.ust.model.Account.setYearOfCreation(int)
+public void com.ust.model.Account.setaCreator(java.lang.String)
+________________________________________________________
+Class: com.ust.testGenerator.TestGeneration
+Constructors: 
+public com.ust.testGenerator.TestGeneration()
+Fields: 
+static java.lang.String com.ust.testGenerator.TestGeneration.INPUT_FILE
+static java.lang.String com.ust.testGenerator.TestGeneration.OUTPUT_DIRECTORY
+private java.util.Set com.ust.testGenerator.TestGeneration.importStatements
+Methods: 
+java.lang.String com.ust.testGenerator.TestGeneration.getDefaultValue(java.lang.Class)
+java.lang.String com.ust.testGenerator.TestGeneration.capitalize(java.lang.String)
+private void com.ust.testGenerator.TestGeneration.generateTestCases(java.lang.Class)
+public void com.ust.testGenerator.TestGeneration.generateTestCases(java.lang.String)
+private void com.ust.testGenerator.TestGeneration.generateImports(java.lang.Class,java.lang.StringBuilder)
+private void com.ust.testGenerator.TestGeneration.collectImportedPackages(java.lang.reflect.Executable[])
+private void com.ust.testGenerator.TestGeneration.collectImportedPackages(java.lang.reflect.Field[])
+private void com.ust.testGenerator.TestGeneration.generateFieldAssertions(java.lang.Class,java.lang.reflect.Field[],java.lang.StringBuilder)
+private void com.ust.testGenerator.TestGeneration.generateReflectionsData(java.lang.Class)
+private void com.ust.testGenerator.TestGeneration.scanAndSaveReflectionsData(java.lang.String,java.lang.String)
+private void com.ust.testGenerator.TestGeneration.collectImportedPackage(java.lang.Class)
+private void com.ust.testGenerator.TestGeneration.generateMethodAssertions(java.lang.Class,java.lang.reflect.Method[],java.lang.StringBuilder)
+private void com.ust.testGenerator.TestGeneration.generateTestCasesFromReflectionsData(java.lang.String)
+________________________________________________________
+Class: com.ust.service.AccountServiceImplementation
+Constructors: 
+public com.ust.service.AccountServiceImplementation(com.ust.repository.AccountRepository)
+Fields: 
+private com.ust.repository.AccountRepository com.ust.service.AccountServiceImplementation.accountRepo
+Methods: 
+public com.ust.model.Account com.ust.service.AccountServiceImplementation.saveAccount(com.ust.model.Account) throws com.ust.exception.AccountAlreadyExistsException
+public com.ust.model.Account com.ust.service.AccountServiceImplementation.updateAccount(com.ust.model.Account) throws com.ust.exception.NoSuchAccountExistsException
+public com.ust.model.Account com.ust.service.AccountServiceImplementation.getAccountById(int) throws com.ust.exception.AccountNotFoundException
+public java.util.List com.ust.service.AccountServiceImplementation.getAllAccounts() throws com.ust.exception.AccountNotFoundException
+________________________________________________________
+Class: com.ust.AccountApplication
+Constructors: 
+public com.ust.AccountApplication()
+Fields: 
+Methods: 
+public static void com.ust.AccountApplication.main(java.lang.String[])
+________________________________________________________
+Class: com.ust.service.AccountService
+Constructors: 
+Fields: 
+Methods: 
+public abstract com.ust.model.Account com.ust.service.AccountService.saveAccount(com.ust.model.Account) throws com.ust.exception.AccountAlreadyExistsException
+public abstract com.ust.model.Account com.ust.service.AccountService.updateAccount(com.ust.model.Account) throws com.ust.exception.NoSuchAccountExistsException
+public abstract com.ust.model.Account com.ust.service.AccountService.getAccountById(int) throws com.ust.exception.AccountNotFoundException
+public abstract java.util.List com.ust.service.AccountService.getAllAccounts() throws com.ust.exception.AccountNotFoundException
+________________________________________________________
